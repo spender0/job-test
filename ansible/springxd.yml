@@ -1,6 +1,13 @@
 - hosts: zookeeper
   user: vagrant
   sudo: yes
+
+  roles:
+    - kbrebanov.selinux
+
+- hosts: zookeeper
+  user: vagrant
+  sudo: yes
   
   roles:
     - zookeeper

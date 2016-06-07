@@ -6,6 +6,6 @@ vagrant up
 
 cd ../ansible
 
-sudo ansible-galaxy install tkuhlman.zookeeper
+sudo ansible-galaxy install tkuhlman.zookeeper kbrebanov.selinux
 
 ansible-playbook springxd.yml
