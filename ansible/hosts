@@ -1,0 +1,15 @@
+[zookeeper]
+192.168.100.221 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/z1/virtualbox/private_key
+192.168.100.222 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/z2/virtualbox/private_key
+192.168.100.223 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/z3/virtualbox/private_key
+
+[pgsql]
+192.168.100.224 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/pgsql/virtualbox/private_key
+
+[redis]
+192.168.100.225 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/redis/virtualbox/private_key
+
+[springxd]
+192.168.100.226 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/s1/virtualbox/private_key
+192.168.100.227 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/s2/virtualbox/private_key
+

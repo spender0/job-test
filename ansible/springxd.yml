@@ -1,0 +1,7 @@
+- hosts: zookeeper
+  user: vagrant
+  sudo: yes
+  
+  roles:
+    - zookeeper
+

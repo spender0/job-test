@@ -1,0 +1,11 @@
+clone this repository
+
+cd vagrant
+
+vagrant up
+
+cd ../ansible
+
+sudo ansible-galaxy install tkuhlman.zookeeper
+
+ansible-playbook springxd.yml
