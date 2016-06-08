@@ -1,4 +1,4 @@
-rdbms# XD Configuration file
+#XD Configuration file
 # You can set properties here to override the default which
 # are set in the application.yml file loaded by Spring Boot.
 #
@@ -9,8 +9,14 @@ rdbms# XD Configuration file
 # used instead.
 
 #XD data transport (default is redis for distributed, local for single node)
-#xd:
-#  transport: rabbit
+xd:
+  transport: redis
+  analytics:
+    redis:
+         backOffInitialInterval:    1000
+         backOffMaxInterval:        10000 
+         backOffMultiplier:         2.0   
+         maxAttempts:               3 
 
 #  messagebus:
 #    rabbit:
@@ -39,9 +45,9 @@ rdbms# XD Configuration file
 
 #    redis:
 #      headers:
-            # comman-delimited list of additional (string-valued) header names to transport
+#            # comman-delimited list of additional (string-valued) header names to transport
 #      default:
-            # default bus properties, if not specified at the module level
+#            # default bus properties, if not specified at the module level
 #        backOffInitialInterval:    1000
 #        backOffMaxInterval:        10000
 #        backOffMultiplier:         2.0
@@ -58,11 +64,13 @@ rdbms# XD Configuration file
 #Config for singlenode.
 #Transport for single node may be overridden by --transport command line option
 #If the singlenode needs to use external datasource for batch embeddedHsql can be set to false
-spring:
-  profiles: singlenode
-xd:
-  transport: local
+#spring:
+#  profiles: singlenode
+#xd:
+#  transport: local
 #embeddedHsql: true
+
+
 
 ---
 #Config for use with HSQLDB
