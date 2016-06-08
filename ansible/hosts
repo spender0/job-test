@@ -4,20 +4,22 @@
 192.168.100.223 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/z3/virtualbox/private_key
 
 [pgsql]
-192.168.100.224 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/pgsql/virtualbox/private_key
+192.168.100.224 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/pgsql/virtualbox/private_key postgresql_listen_addresses='*'
 
 [redis]
-192.168.100.225 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/redis/virtualbox/private_key
+192.168.100.225 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/redis/virtualbox/private_key redis_bind_interface=192.168.100.225
 
 [springxd]
 192.168.100.226 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/s1/virtualbox/private_key
 192.168.100.227 ansible_ssh_private_key_file=../../vagrant/springxd/.vagrant/machines/s2/virtualbox/private_key
 
-
+[springxd:vars]
+install_spring_xd=true
+restart_admins=true
+restart_containers=true
 
 [all:children]
 zookeeper
-zookeeper:vars
 pgsql
 redis
 springxd

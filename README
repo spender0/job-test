@@ -6,6 +6,6 @@ vagrant up
 
 cd ../ansible
 
-sudo ansible-galaxy install tkuhlman.zookeeper kbrebanov.selinux
+sudo ansible-galaxy install tkuhlman.zookeeper kbrebanov.selinux patrik.uytterhoeven.PostgreSQL-For-RHEL6x geerlingguy.redis geerlingguy.repo-epel
 
 ansible-playbook springxd.yml

@@ -1,14 +1,32 @@
-- hosts: zookeeper
+#- hosts: all
+#  user: vagrant
+#  sudo: yes
+#  roles:
+#    - kbrebanov.selinux
+
+#- hosts: zookeeper
+#  user: vagrant
+#  sudo: yes
+#  roles:
+#    - zookeeper
+
+#- hosts: pgsql
+#  user: vagrant
+#  sudo: yes
+#  roles:
+#    - patrik.uytterhoeven.PostgreSQL-For-RHEL6x
+
+#- hosts: redis
+#  user: vagrant
+#  sudo: yes
+#  roles:
+#    - geerlingguy.repo-epel
+#    - geerlingguy.redis
+
+- hosts: springxd
   user: vagrant
   sudo: yes
-
   roles:
-    - kbrebanov.selinux
+    - spring-xd
 
-- hosts: zookeeper
-  user: vagrant
-  sudo: yes
-  
-  roles:
-    - zookeeper
 
