@@ -10,11 +10,25 @@
 #  roles:
 #    - zookeeper
 
+
 #- hosts: pgsql
 #  user: vagrant
 #  sudo: yes
+#  vars:
+#    postgresql_databases:
+#      - name: springxd
+#        hstore: no
+#    postgresql_users:
+#      - name: springxd
+#        pass: springxd
+#        encrypted: no 
+#    postgresql_user_privileges:
+#      - name: springxd
+#        db: springxd
+#        priv: "ALL" 
+#    postgresql_pg_hba_passwd_hosts: ['192.168.100.0/24']
 #  roles:
-#    - patrik.uytterhoeven.PostgreSQL-For-RHEL6x
+#    - patrik.uytterhoeven.PostgreSQL-For-RHEL6x  
 
 #- hosts: redis
 #  user: vagrant
