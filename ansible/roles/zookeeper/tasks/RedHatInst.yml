@@ -7,9 +7,8 @@
 #- name: Change ownership on zokeeper directory.
 #  file: path="{{zookeeper_dir}}" state=directory owner=zookeeper group=zookeeper recurse=yes
 
-
-- name: Download Zookeeper version
-  get_url: url={{zookeeper_url}} dest={{monasca_download_dir}}/zookeeper-{{zookeeper_version}}.tar.gz timeout=100
+- name: create monasca_download_dir
+  command: mkdir -p {{monasca_download_dir}}
 
 - name: create zookeeper opt dir
   command: mkdir -p {{zookeeper_dir}}
@@ -19,6 +18,9 @@
 
 - name: create zookeeper log dir
   command: mkdir -p {{zookeeper_log_dir}}
+
+- name: Download Zookeeper version
+  get_url: url={{zookeeper_url}} dest={{monasca_download_dir}}/zookeeper-{{zookeeper_version}}.tar.gz timeout=100
 
 - name: Unpack tarball
   command: tar xzf {{monasca_download_dir}}/zookeeper-{{zookeeper_version}}.tar.gz --strip-components=1 chdir={{zookeeper_dir}} creates={{zookeeper_dir}}/bin
