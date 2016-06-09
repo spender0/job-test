@@ -1,0 +1,5 @@
+- name: deploy.cmdfile
+  template: src=deploy.cmdfile.j2 dest=~/deploy.cmdfile
+
+- name: "deploy stream"
+  shell: xd-shell --cmdfile ~/deploy.cmdfile

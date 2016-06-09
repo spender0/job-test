@@ -1,0 +1,7 @@
+- name: destroy.cmdfile
+  template: src=destroy.cmdfile.j2 dest=~/destroy.cmdfile
+
+
+- name: "destroy stream"
+  shell: xd-shell --cmdfile ~/destroy.cmdfile
+

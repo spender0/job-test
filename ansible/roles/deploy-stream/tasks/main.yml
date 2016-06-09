@@ -1,0 +1,8 @@
+---
+# tasks file for http2log
+
+- include: destroy.yml
+  when: destroy is defined
+
+- include: deploy.yml
+  when: deploy is defined

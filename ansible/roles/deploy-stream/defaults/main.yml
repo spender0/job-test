@@ -1,0 +1,5 @@
+---
+# defaults file for http2log
+stream_definition: 'http --port=8080 | transform | log'
+stream_name: 'http2log'
+

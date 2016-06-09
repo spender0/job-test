@@ -37,10 +37,16 @@
 #    - geerlingguy.repo-epel
 #    - geerlingguy.redis
 
+#- hosts: springxd
+#  user: vagrant
+#  sudo: yes
+#  roles:
+#    - spring-xd
+
 - hosts: springxd
   user: vagrant
   sudo: yes
   roles:
-    - spring-xd
+    - deploy-stream
 
 
