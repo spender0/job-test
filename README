@@ -1,9 +1,12 @@
+Clone this repository
+
+Install ansible roles:
 sudo ansible-galaxy install tkuhlman.zookeeper kbrebanov.selinux patrik.uytterhoeven.PostgreSQL-For-RHEL6x geerlingguy.redis geerlingguy.repo-epel
 
-clone this repository
-
+Up vagrant machines:
 cd vagrant 
 vagrant up
 
+Deploy spring xd:
 cd ../ansible
 ansible-playbook springxd.yml
