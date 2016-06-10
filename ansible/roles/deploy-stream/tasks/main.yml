@@ -2,7 +2,7 @@
 # tasks file for http2log
 
 - include: destroy.yml
-  when: destroy is defined
+  when: destroy_stream is defined
 
 - include: deploy.yml
-  when: deploy is defined
+  when: deploy_stream is defined

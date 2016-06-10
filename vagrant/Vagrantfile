@@ -6,38 +6,50 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 
-base_box="anandbitra/redhat-6.5"
+base_box="geerlingguy/centos6"
 memory=512
 cpus=1
 
 nodes = [
   {
   name:'z1',
-  ip:'192.168.100.201'
+  ip:'192.168.100.221'
   },
   {
   name:'z2',
-  ip:'192.168.100.202'
+  ip:'192.168.100.222'
   },
   {
   name:'z3',
-  ip:'192.168.100.203'
+  ip:'192.168.100.223'
   },
   {
   name:'s1',
-  ip:'192.168.100.206'
+  ip:'192.168.100.226'
   },
   {
   name:'s2',
-  ip:'192.168.100.207'
+  ip:'192.168.100.227'
   },
   {
   name:'pgsql',
-  ip:'192.168.100.204'
+  ip:'192.168.100.224'
   },
   {
-  name:'redis',
-  ip:'192.168.100.205'
+  name:'redis1',
+  ip:'192.168.100.225'
+  },
+  {
+  name:'redis2',
+  ip:'192.168.100.228'
+  },
+  {
+  name:'r1',
+  ip:'192.168.100.229'
+  },
+  {
+  name:'r2',
+  ip:'192.168.100.230'
   }
 ]
 

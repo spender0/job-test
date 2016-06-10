@@ -1,7 +1,7 @@
 Clone this repository
 
 Install ansible roles:
-sudo ansible-galaxy install kbrebanov.selinux patrik.uytterhoeven.PostgreSQL-For-RHEL6x geerlingguy.redis geerlingguy.repo-epel
+sudo ansible-galaxy install kbrebanov.selinux patrik.uytterhoeven.PostgreSQL-For-RHEL6x geerlingguy.redis geerlingguy.repo-epel jtyr.rabitmq jtyr.config_encoder_filters franklinkim.hosts
 
 Up vagrant machines:
 cd vagrant 

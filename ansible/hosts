@@ -10,8 +10,12 @@
 192.168.100.225 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/redis/virtualbox/private_key" redis_bind_interface=192.168.100.225
 
 [springxd]
-192.168.100.226 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/s1/virtualbox/private_key" deploy=1
+192.168.100.226 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/s1/virtualbox/private_key" deploy_stream=1 admin-xd=1
 192.168.100.227 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/s2/virtualbox/private_key"
+
+[rabbitmq]
+192.168.100.229 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/r1/virtualbox/private_key" listen_ip=192.168.100.229
+192.168.100.230 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/r2/virtualbox/private_key" listen_ip=192.168.100.230
 
 
 [springxd:vars]
@@ -26,6 +30,8 @@ zookeeper
 pgsql
 redis
 springxd
+rabbitmq
 
 [all:vars]
+rabbitmq_epel_install=0
 selinux_state=disabled
