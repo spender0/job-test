@@ -6,6 +6,8 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 
+base_box="anandbitra/redhat-6.5"
+
 zk_first_id=1
 zk_last_id=3
 
@@ -15,11 +17,12 @@ s_last_id=7
 
 
 
+
 Vagrant.configure(2) do |config|
 
   (zk_first_id..zk_last_id).each do |i|
     config.vm.define "z#{i}" do |node|
-      node.vm.box = "centos/7"
+      node.vm.box = base_box
       node.vm.hostname = "z#{i}"
       node.vm.network "private_network", ip: "192.168.100.#{i+220}"
       node.vm.provider :virtualbox do |v|
@@ -31,7 +34,7 @@ Vagrant.configure(2) do |config|
 
   (s_first_id..s_last_id).each do |i|
     config.vm.define "s#{i}" do |node|
-      node.vm.box = "centos/7"
+      node.vm.box = base_box
       node.vm.hostname = "s#{i}"
       node.vm.network "private_network", ip: "192.168.100.#{i+220}"
       node.vm.provider :virtualbox do |v|
@@ -43,7 +46,7 @@ Vagrant.configure(2) do |config|
 
   (4..4).each do |i|
     config.vm.define "pgsql#{i}" do |pgsql|
-      pgsql.vm.box = "centos/7"
+      pgsql.vm.box = base_box
       pgsql.vm.hostname = "pgsql#{i}"
       pgsql.vm.network "private_network", ip: "192.168.100.#{i+220}"
       pgsql.vm.provider :virtualbox do |v|
@@ -55,7 +58,7 @@ Vagrant.configure(2) do |config|
   
   (5..5).each do |i|
     config.vm.define "redis#{i}" do |redis|
-      redis.vm.box = "centos/7"
+      redis.vm.box = base_box
       redis.vm.hostname = "redis#{i}"
       redis.vm.network "private_network", ip: "192.168.100.#{i+220}"
       redis.vm.provider :virtualbox do |v|
