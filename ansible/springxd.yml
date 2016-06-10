@@ -1,53 +1,41 @@
-#- hosts: all
-#  user: vagrant
-#  sudo: yes
-#  roles:
-#    - kbrebanov.selinux
+- hosts: all
+  user: vagrant
+  sudo: yes
+  roles:
+    - kbrebanov.selinux
 
-#- hosts: zookeeper
-#  user: vagrant
-#  sudo: yes
-#  roles:
-#    - zookeeper
+- hosts: zookeeper
+  user: vagrant
+  sudo: yes
+  roles:
+    - zookeeper
 
 
-#- hosts: pgsql
-#  user: vagrant
-#  sudo: yes
-#  vars:
-#    postgresql_databases:
-#      - name: springxd
-#        hstore: no
-#    postgresql_users:
-#      - name: springxd
-#        pass: springxd
-#        encrypted: no 
-#    postgresql_user_privileges:
-#      - name: springxd
-#        db: springxd
-#        priv: "ALL" 
-#    postgresql_pg_hba_passwd_hosts: ['192.168.100.0/24']
-#  roles:
-#    - patrik.uytterhoeven.PostgreSQL-For-RHEL6x  
+- hosts: pgsql
+  user: vagrant
+  sudo: yes
+  vars:
+    postgresql_databases:
+      - name: springxd
+        hstore: no
+    postgresql_users:
+      - name: springxd
+        pass: springxd
+        encrypted: no 
+    postgresql_user_privileges:
+      - name: springxd
+        db: springxd
+        priv: "ALL" 
+    postgresql_pg_hba_passwd_hosts: ['192.168.100.0/24']
+  roles:
+    - patrik.uytterhoeven.PostgreSQL-For-RHEL6x  
 
-#- hosts: redis
-#  user: vagrant
-#  sudo: yes
-#  roles:
-#    - geerlingguy.repo-epel
-#    - geerlingguy.redis
-
-#- hosts: springxd
-#  user: vagrant
-#  sudo: yes
-#  roles:
-#    - spring-xd
-
-#- hosts: springxd
-#  user: vagrant
-#  sudo: yes
-#  roles:
-#    - deploy-stream
+- hosts: redis
+  user: vagrant
+  sudo: yes
+  roles:
+    - geerlingguy.repo-epel
+    - geerlingguy.redis
 
 
 - hosts: rabbitmq
@@ -62,7 +50,21 @@
       - { ip: '192.168.100.229', domain: 'r1' }
       - { ip: '192.168.100.230', domain: 'r2' }
   roles:
-#    - geerlingguy.repo-epel
+     - geerlingguy.repo-epel
      - franklinkim.hosts  
      - jtyr.rabitmq
    
+
+
+- hosts: springxd
+  user: vagrant
+  sudo: yes
+  roles:
+    - spring-xd
+
+- hosts: springxd
+  user: vagrant
+  sudo: yes
+  roles:
+    - deploy-stream
+
