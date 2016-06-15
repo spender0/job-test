@@ -30,4 +30,4 @@ rabbitmq_users:  #define admin user to create in order to login to WebUI
 
 install: false
 rabbitmq_master: 'r1'
-
+master: false

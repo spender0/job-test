@@ -1,0 +1,24 @@
+#- hosts: rabbitmq
+#  user: vagrant
+#  sudo: yes
+#  vars:
+#    rabbitmq_config:
+#     - rabbit:
+#       - tcp_listeners:
+#         - 5671
+#    hosts:
+#      - { ip: '192.168.100.229', domain: 'r1' }
+#      - { ip: '192.168.100.230', domain: 'r2' }
+#  roles:
+#     - geerlingguy.repo-epel
+#     - franklinkim.hosts
+#     - jtyr.rabitmq
+
+
+- hosts: rabbitmq
+  user: vagrant
+  sudo: yes
+  vars:
+  roles:
+     - rabbitmq-cluster
+
