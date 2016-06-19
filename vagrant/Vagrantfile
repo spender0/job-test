@@ -46,6 +46,7 @@ Vagrant.configure(2) do |config|
 
   nodes.each do |i|
     config.vm.define "#{i[:name]}" do |node|
+      node.ssh.private_key_path = "~/.ssh/id_rsa"
       node.vm.box = base_box
       node.vm.hostname = "#{i[:name]}"
       node.vm.network "private_network", ip: "#{i[:ip]}"
