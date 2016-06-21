@@ -1,0 +1,5 @@
+- hosts: all
+  user: user
+  sudo: yes
+  roles:
+    - spring-xd-docker

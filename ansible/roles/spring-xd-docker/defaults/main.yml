@@ -1,0 +1,5 @@
+---
+# defaults file for spring-xd-docker
+
+
+docker_server_api_version: 1.21

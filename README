@@ -1,5 +1,7 @@
 Clone this repository
 
+VAGRANT OPTION:
+
 Install ansible roles:
 sudo ansible-galaxy install kbrebanov.selinux patrik.uytterhoeven.PostgreSQL-For-RHEL6x geerlingguy.redis geerlingguy.repo-epel jtyr.rabitmq jtyr.config_encoder_filters franklinkim.hosts
 
@@ -10,3 +12,8 @@ vagrant up
 Deploy spring xd:
 cd ../ansible
 ansible-playbook springxd.yml
+
+
+DOCKER OPTION:
+
+sudo ansible-playbook -i "localhost," -c local  springxd-docker.yml

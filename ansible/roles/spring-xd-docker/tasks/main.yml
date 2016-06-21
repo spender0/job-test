@@ -1,0 +1,24 @@
+---
+# tasks file for spring-xd-docker
+
+
+- name: redis container
+  docker:
+    name: redis
+    image: redis
+    state: started
+    docker_api_version: "{{ docker_server_api_version }}"
+
+- name: hsqldb container
+  docker:
+    name: hsqldb
+    image: springxd/hsqldb
+    state: started
+    docker_api_version: "{{ docker_server_api_version }}"
+
+- name: zookeeper container
+  docker:
+    name: zookeeper
+    image: springxd/zookeeper
+    state: started
+    docker_api_version: "{{ docker_server_api_version }}"
