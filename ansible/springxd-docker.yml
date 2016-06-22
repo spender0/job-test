@@ -1,5 +1,7 @@
 - hosts: all
   user: user
   sudo: yes
+  vars:
+    docker_server_api_version: 1.22
   roles:
     - spring-xd-docker

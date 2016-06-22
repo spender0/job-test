@@ -6,19 +6,31 @@
   docker:
     name: redis
     image: redis
-    state: started
+    state: reloaded
+    expose:
+      - "{{ redis_expose }}"
+    ports:
+      - "{{ redis_port }}"
     docker_api_version: "{{ docker_server_api_version }}"
 
 - name: hsqldb container
   docker:
     name: hsqldb
     image: springxd/hsqldb
-    state: started
+    state: reloaded
+    expose:
+      - "{{ hsqldb_expose }}"
+    ports:
+      - "{{ hsqldb_port }}"
     docker_api_version: "{{ docker_server_api_version }}"
 
 - name: zookeeper container
   docker:
     name: zookeeper
     image: springxd/zookeeper
-    state: started
+    state: reloaded
+    expose:
+      - "{{ zookeeper_expose }}"
+    ports:
+      - "{{ zookeeper_port }}"
     docker_api_version: "{{ docker_server_api_version }}"
