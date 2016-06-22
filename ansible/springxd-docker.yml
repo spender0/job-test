@@ -1,7 +1,18 @@
+#64000-65000
+
 - hosts: all
   user: user
   sudo: yes
   vars:
     docker_server_api_version: 1.22
+    redis_ext_host: 172.17.0.1
+    redis_ext_port: 64990
+    hsqldb_ext_host: 172.17.0.1
+    hsqldb_ext_port: 64991
+    zookeeper_ext_host: 172.17.0.1   
+    zookeeper_ext_port: 64992
+    springxd_admin_ext_host: 172.17.0.1
+    springxd_admin_ext_port: 64993
+
   roles:
     - spring-xd-docker

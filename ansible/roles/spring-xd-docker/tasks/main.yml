@@ -10,7 +10,7 @@
     expose:
       - "{{ redis_expose }}"
     ports:
-      - "{{ redis_port }}"
+      - "{{ redis_docker_port }}"
     docker_api_version: "{{ docker_server_api_version }}"
 
 - name: hsqldb container
@@ -21,7 +21,7 @@
     expose:
       - "{{ hsqldb_expose }}"
     ports:
-      - "{{ hsqldb_port }}"
+      - "{{ hsqldb_docker_port }}"
     docker_api_version: "{{ docker_server_api_version }}"
 
 - name: zookeeper container
@@ -32,5 +32,32 @@
     expose:
       - "{{ zookeeper_expose }}"
     ports:
-      - "{{ zookeeper_port }}"
+      - "{{ zookeeper_docker_port }}"
+    docker_api_version: "{{ docker_server_api_version }}"
+
+
+- name: springxd container container
+  docker:
+    name: springxd_container1
+    image: springxd/container
+    state: reloaded
+    links:
+      - "redis:redis"
+      - "zookeeper:zookeeper"
+      - "hsqldb:hsqldb"
+    docker_api_version: "{{ docker_server_api_version }}"
+
+- name: springxd admin
+  docker:
+    name: springxd_admin
+    image: springxd/admin
+    state: reloaded
+    expose:
+      - "{{ springxd_admin_expose }}"
+    ports:
+      - "{{ springxd_admin_docker_port }}"
+    links:
+      - "redis:redis"
+      - "zookeeper:zookeeper"
+      - "hsqldb:hsqldb"
     docker_api_version: "{{ docker_server_api_version }}"

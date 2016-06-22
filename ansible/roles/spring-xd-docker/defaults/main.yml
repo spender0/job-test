@@ -8,8 +8,20 @@ redis_expose: 6379
 pgsql_expose: 5432
 zookeeper_expose: 2181
 hsqldb_expose: 9101
+springxd_admin_expose: 9393
 
 
-redis_port: "6379:{{redis_expose}}"
-hsqldb_port: "9101:{{hsqldb_expose}}"
-zookeeper_port: "2181:{{zookeeper_expose}}"
+redis_ext_host: 127.0.0.1
+redis_ext_port: "{{redis_expose}}"
+hsqldb_ext_host: 127.0.0.1
+hsqldb_ext_port: "{{hsqldb_expose}}"
+zookeeper_ext_host: 127.0.0.1
+zookeeper_ext_port: "{{zookeeper_expose}}"
+springxd_admin_ext_host: 127.0.0.1
+springxd_admin_ext_port: "{{springxd_admin_expose}}"
+
+
+redis_docker_port: "{{redis_ext_port}}:{{redis_expose}}"
+hsqldb_docker_port: "{{hsqldb_ext_port}}:{{hsqldb_expose}}"
+zookeeper_docker_port: "{{zookeeper_ext_port}}:{{zookeeper_expose}}"
+springxd_admin_docker_port: "{{springxd_admin_ext_port}}:{{springxd_admin_expose}}"
