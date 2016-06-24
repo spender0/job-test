@@ -5,6 +5,13 @@
   sudo: yes
   vars:
     weavenet_port: 64980
+    weavenet_hosts:
+      - host: "192.168.100.221"
+        port: "{{weavenet_port}}"
+      - host: "192.168.100.222"
+        port: "{{weavenet_port}}"
+      - host: "192.168.100.223"
+        port: "{{weavenet_port}}"
   roles:
     - weavenet
 
