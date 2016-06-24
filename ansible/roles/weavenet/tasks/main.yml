@@ -1,0 +1,16 @@
+---
+# tasks file for weavenet
+
+- name: "Installing weavenet | wget weave script"
+  get_url: url=http://git.io/weave dest=/usr/local/bin/weave mode=0755
+
+- name: "launching weavenet proxy"
+  shell: export WEAVE_PORT="{{weavenet_port}}" && /usr/local/bin/weave launch-proxy --no-detect-tls  
+
+- name: "launching weavenet router"
+  shell: export WEAVE_PORT="{{weavenet_port}}" && /usr/local/bin/weave launch-router
+
+- name: "connecting hosts"
+  shell: export WEAVE_PORT="{{weavenet_port}}" && /usr/local/bin/weave connect "{{item.host}}:{{item.port}}"
+  when: ansible_host != "{{item.host}}"
+  with_items: weavenet_hosts

@@ -16,4 +16,22 @@ ansible-playbook springxd.yml
 
 DOCKER OPTION:
 
+Install docker on all machines:
+sudo ansible -i "localhost," -c local -a "yum install -y docker" all
+or
+ansible -i "192.168.100.221,192.168.100.222,192.168.100.223," -u vagrant -s  -a "yum install -y docker"  all
+
+sudo ansible -i "localhost," -c local -a "service docker start" all
+or
+ansible -i "192.168.100.221,192.168.100.222,192.168.100.223," -u vagrant -s  -a "service docker start" all
+
+
+install weavenet on all machines:
+
+ansible-playbook -i "localhost" -u vagrant -s weavenet.yml
+or
+ansible-playbook -i "192.168.100.221,192.168.100.222,192.168.100.223," -u vagrant -s weavenet.yml
+
+
+
 sudo ansible-playbook -i "localhost," -c local  springxd-docker.yml

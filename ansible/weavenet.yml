@@ -1,0 +1,10 @@
+#64000-65000
+
+- hosts: all
+  user: vagrant
+  sudo: yes
+  vars:
+    weavenet_port: 64980
+  roles:
+    - weavenet
+
