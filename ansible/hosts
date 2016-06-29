@@ -1,17 +1,17 @@
 [zookeeper]
-192.168.100.221 ansible_ssh_private_key_file=../vagrant/.vagrant/machines/z1/virtualbox/private_key
-192.168.100.222 ansible_ssh_private_key_file=../vagrant/.vagrant/machines/z2/virtualbox/private_key
-192.168.100.223 ansible_ssh_private_key_file=../vagrant/.vagrant/machines/z3/virtualbox/private_key
+192.168.100.221
+192.168.100.222
+192.168.100.223
 
 [pgsql]
-192.168.100.224 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/pgsql/virtualbox/private_key" postgresql_listen_addresses='*'
+192.168.100.224 postgresql_listen_addresses='*'
 
 [redis]
-192.168.100.225 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/redis/virtualbox/private_key" redis_bind_interface=192.168.100.225
+192.168.100.225 redis_bind_interface=192.168.100.225
 
 [springxd]
-192.168.100.226 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/s1/virtualbox/private_key" deploy=1
-192.168.100.227 ansible_ssh_private_key_file="../vagrant/.vagrant/machines/s2/virtualbox/private_key"
+192.168.100.226 deploy=1
+192.168.100.227
 
 
 [springxd:vars]
